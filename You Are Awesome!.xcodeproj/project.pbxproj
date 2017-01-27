@@ -146,6 +146,7 @@
 				TargetAttributes = {
 					D1319C861E25C4F1007D2FF9 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 6MCTLT58A2;
 						ProvisioningStyle = Automatic;
 					};
 					D1319C9A1E25C4F1007D2FF9 = {
@@ -341,7 +342,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6MCTLT58A2;
 				INFOPLIST_FILE = "You Are Awesome!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.barrett.You-Are-Awesome-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,7 +356,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6MCTLT58A2;
 				INFOPLIST_FILE = "You Are Awesome!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.barrett.You-Are-Awesome-";
 				PRODUCT_NAME = "$(TARGET_NAME)";

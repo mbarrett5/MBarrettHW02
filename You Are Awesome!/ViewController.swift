@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var awesomeImage: UIImageView!
     
+    @IBOutlet weak var switchSlider: UISwitch!
+    
     var awesomePlayer = AVAudioPlayer()
     
     var lastIndex = -1
@@ -75,6 +77,11 @@ class ViewController: UIViewController {
     }
     
     
+
+    
+    
+    //MARK: Actions
+    
     @IBAction func messageButtonPressed(_ sender: UIButton) {
         let messages = ["You Are Fantastic",
                         "You Are Great!",
@@ -93,11 +100,25 @@ class ViewController: UIViewController {
         awesomeImage.isHidden = false
         awesomeImage.image = UIImage(named: "Image\(random)")
         
-        random = nonRepeatedRandom(last: &lastSound, range: numOfSounds)
-        playSound(soundName: "sound\(random)")
+        if switchSlider.isOn {
+            
+            random = nonRepeatedRandom(last: &lastSound, range: numOfSounds)
+            playSound(soundName: "sound\(random)")
+        }
         
-       
+    }
+    
+    
+    @IBAction func slideSwitch(_ sender: UISwitch) {
+        if switchSlider.isOn == false {
+            if lastSound != -1 {
+                awesomePlayer.stop()
+            }
+            
+        }
         
+    }
+    
         
         
         /*messageLabel.text = messages[index]
@@ -108,8 +129,9 @@ class ViewController: UIViewController {
         else {
             index = index + 1
         }*/
+    
         
         }
     
 
-}
+

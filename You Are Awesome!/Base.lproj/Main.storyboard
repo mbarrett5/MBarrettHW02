@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,37 +22,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb6-et-ESx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb6-et-ESx">
                                 <rect key="frame" x="16" y="20" width="343" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="QIj-Cw-b4a"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                 <color key="textColor" red="0.18146735429763794" green="0.63064944744110107" blue="0.98812288045883179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aL-T2-LwE">
-                                <rect key="frame" x="135" y="151" width="104" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aL-T2-LwE">
+                                <rect key="frame" x="135.5" y="151" width="104" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Saw-c4-81Y"/>
+                                </constraints>
                                 <state key="normal" title="Show Message"/>
                                 <connections>
                                     <action selector="messageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xi0-pz-DrW"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image0" translatesAutoresizingMaskIntoConstraints="NO" id="YXK-FF-UTC">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image0" translatesAutoresizingMaskIntoConstraints="NO" id="YXK-FF-UTC">
                                 <rect key="frame" x="16" y="243" width="343" height="323"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Sound:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFX-E2-9jr">
+                                <rect key="frame" x="95" y="209" width="92" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDY-iO-4UU">
+                                <rect key="frame" x="213" y="204" width="51" height="31"/>
+                                <connections>
+                                    <action selector="slideSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="cjm-UH-Cf8"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RDY-iO-4UU" firstAttribute="leading" secondItem="xFX-E2-9jr" secondAttribute="trailing" constant="26" id="1bf-Gh-eh6"/>
+                            <constraint firstItem="xFX-E2-9jr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="79" id="4jk-JR-Aye"/>
+                            <constraint firstItem="Bb6-et-ESx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8a9-fC-Giu"/>
+                            <constraint firstItem="Bb6-et-ESx" firstAttribute="centerX" secondItem="0aL-T2-LwE" secondAttribute="centerX" id="Ju1-eT-mRG"/>
+                            <constraint firstItem="0aL-T2-LwE" firstAttribute="top" secondItem="Bb6-et-ESx" secondAttribute="bottom" constant="8" symbolic="YES" id="PRX-VF-Hvj"/>
+                            <constraint firstItem="Bb6-et-ESx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Qyt-tn-Yxk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YXK-FF-UTC" secondAttribute="bottom" constant="101" id="YNZ-gW-Uu2"/>
+                            <constraint firstItem="YXK-FF-UTC" firstAttribute="top" secondItem="xFX-E2-9jr" secondAttribute="bottom" constant="13" id="a7g-6b-e0M"/>
+                            <constraint firstItem="xFX-E2-9jr" firstAttribute="centerY" secondItem="RDY-iO-4UU" secondAttribute="centerY" id="dIL-NT-YgP"/>
+                            <constraint firstItem="Bb6-et-ESx" firstAttribute="leading" secondItem="YXK-FF-UTC" secondAttribute="leading" id="gQA-nf-O6w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RDY-iO-4UU" secondAttribute="trailing" constant="97" id="meT-Yw-VBh"/>
+                            <constraint firstItem="Bb6-et-ESx" firstAttribute="trailing" secondItem="YXK-FF-UTC" secondAttribute="trailing" id="pql-mR-n2F"/>
+                            <constraint firstItem="RDY-iO-4UU" firstAttribute="top" secondItem="0aL-T2-LwE" secondAttribute="bottom" constant="23" id="tGg-RQ-xFv"/>
+                            <constraint firstItem="Bb6-et-ESx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="y7c-yf-VuS"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="awesomeImage" destination="YXK-FF-UTC" id="Kpf-Wr-UcI"/>
                         <outlet property="messageButton" destination="0aL-T2-LwE" id="PCe-ak-fN6"/>
                         <outlet property="messageLabel" destination="Bb6-et-ESx" id="Cbk-m4-PVd"/>
+                        <outlet property="switchSlider" destination="RDY-iO-4UU" id="80V-7B-hIW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2383" y="-854"/>
+            <point key="canvasLocation" x="-3018" y="-903"/>
         </scene>
     </scenes>
     <resources>
